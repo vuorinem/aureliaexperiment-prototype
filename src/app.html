@@ -1,6 +1,9 @@
 <template>
 
   <require from="./styles/app.css"></require>
+  <require from="./resources/elements/navbar"></require>
+
+  <navbar></navbar>
 
   <div class="container">
     <div class="jumbotron">
@@ -8,8 +11,15 @@
         <h1>${message}</h1>
       </h1>
       <p>...</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      <p>
+        <a class="btn btn-primary btn-lg"
+           href="#"
+           role="button"
+           data-toggle="tooltip"
+           data-placement="left"
+           title="Click this to learn more">Learn more</a>
+      </p>
     </div>
   </div>
-  
+
 </template>
