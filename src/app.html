@@ -2,6 +2,7 @@
 
   <require from="./styles/app.css"></require>
   <require from="./resources/elements/navbar"></require>
+  <require from="./resources/elements/note"></require>
 
   <navbar></navbar>
 
@@ -10,15 +11,18 @@
       <h1>
         <h1>${message}</h1>
       </h1>
-      <p>...</p>
-      <p>
-        <a class="btn btn-primary btn-lg"
-           href="#"
-           role="button"
-           data-toggle="tooltip"
-           data-placement="left"
-           title="Click this to learn more">Learn more</a>
-      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <note></note>
+      </div>
+      <div class="col-md-4">
+        <note></note>
+      </div>
+      <div class="col-md-4">
+        <note></note>
+      </div>
     </div>
   </div>
 
