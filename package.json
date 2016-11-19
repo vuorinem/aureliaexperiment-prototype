@@ -17,6 +17,7 @@
   "peerDependencies": {},
   "devDependencies": {
     "aurelia-cli": "^0.22.0",
+    "aurelia-fetch-client": "^1.0.1",
     "aurelia-testing": "^1.0.0-beta.2.0.0",
     "aurelia-tools": "^1.0.0",
     "bootstrap-sass": "^3.3.7",
