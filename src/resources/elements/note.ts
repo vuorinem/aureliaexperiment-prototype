@@ -1,5 +1,7 @@
+import { bindable } from 'aurelia-framework';
+
 export class Note {
 
-    private content: string = "Write your note here";
+    @bindable private content: string = "Write your note here";
 
 }
