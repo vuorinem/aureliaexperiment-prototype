@@ -1,4 +1,5 @@
 export default {
   debug: true,
-  testing: false
+  testing: false,
+  apiUrl: 'http://mv-noteapi.azurewebsites.net/api'
 };
