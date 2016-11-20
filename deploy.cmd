@@ -98,11 +98,16 @@ call :SelectNodeVersion
 :: 2. Install npm packages
 IF EXIST "package.json" (
   call :ExecuteCmd !NPM_CMD! install --production
-  call :ExecuteCmd au build --env %AURELIA_ENVIRONMENT%
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-:: 3. KuduSync
+:: 3. Build Aurelia application (%AURELIA_ENVIRONMENT%)
+IF EXIST "package.json" (
+  call :ExecuteCmd !NPM_CMD! run build-aurelia -- --env %AURELIA_ENVIRONMENT%
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
+
+:: 4. KuduSync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.deployment;deploy.cmd;.vscode;aurelia_project;custom_typings;src;test;typings;.gitignore;.editorconfig;.karma.conf.json;LICENSE;package.json;tsconfig.json;tslint.json;typings.json;node_modules"
   IF !ERRORLEVEL! NEQ 0 goto error
