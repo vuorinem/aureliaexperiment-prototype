@@ -3,12 +3,9 @@
   "description": "An Aurelia client application.",
   "version": "0.1.0",
   "engines": {
-    "node": "6.6.0"
+    "node": "6.9.1"
   },
-  "repository": {
-    "type": "???",
-    "url": "???"
-  },
+  "repository": "github:vuorinem/aureliaexperiment-prototype",
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.0",
